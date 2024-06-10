@@ -1,0 +1,9 @@
+/* 
+* Stylesheet for the FAQ page Sean's Used Sports Equipment Store
+*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poetsen One', sans-serif;
+}

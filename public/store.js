@@ -11,8 +11,8 @@
         qs("#soccer-nav").addEventListener("click", function() {
             activate("soccer-sec");
         });
-        qs("#waterpolo-nav").addEventListener("click", function() {
-            activate("waterpolo-sec");
+        qs("#golf-nav").addEventListener("click", function() {
+            activate("golf-sec");
         });
     }
 
