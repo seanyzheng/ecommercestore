@@ -1,0 +1,29 @@
+/* Stylesheet for the website Sean's used sports eqipment Store
+*/
+
+
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.hidden {
+    display: none;
+}
+
+#not-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header {
+    font-family: 'Poetsen One', sans-serif;
+}
