@@ -3,21 +3,85 @@
 */
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
-#not-nav {
+header, footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    font-size: 2rem;
+    background-color: beige;
+}
+
+header {
+    justify-content: space-between;
+}
+
+footer {
+    justify-content: center;
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(255, 255, 0);
 }
 
-header {
+body {
     font-family: 'Poetsen One', sans-serif;
+    background-color:bisque;
+}
+
+
+.items-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.items-container > div {
+    flex: 1 1 calc(25% - 16px);
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: tomato;
+}
+
+.items-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 119, 255)
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#prompt {
+    display: flex;
+    justify-content: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav > h2:hover{
+    cursor: pointer;
+    /*undderline on hover*/
+    text-decoration: underline;
+}
+
+#back-btn:hover {
+    cursor: pointer;
 }

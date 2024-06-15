@@ -22,30 +22,32 @@
     </head>
     <body>
         <header>
-            <section id="not-nav">
-                <h1>Sean's Used Sports Equipment Store</h1>
-                <a id="faq" href="faq.html">FAQs</a>
-            </section>
-            <nav>
-                   <h2 id="baseball-nav">Baseball</h2>
-                   <h2 id="basketball-nav">Basketball</h2>
-                   <h2 id="soccer-nav">Soccer</h2>
-                   <h2 id="golf-nav">Water Polo</h2>
-            </nav>
+                <a href="faq.html">FAQs</a>
+                <a href="index.html">Sean's Used Sports Equipment Store</a>
+                <a href="cart.html">Cart</a>
         </header>
         <main>
-            <section id="baseball-sec">
-                <p>baseball stuff</p>
-            </section>
-            <section id="basketball-sec" class="hidden">
-                <p>basketball stuff</p>
-            </section>
-            <section id="soccer-sec" class="hidden">
-                <p>soccer stuff</p>
-            </section>
-            <section id="golf-sec" class="hidden">
-                <p>golf stuff</p>
-            </section>
+            <nav>
+                <h2 id="all-nav">All</h2>
+                <h2 id="baseball-nav">Baseball</h2>
+                <h2 id="basketball-nav">Basketball</h2>
+                <h2 id="football-nav">Football</h2>
+                <h2 id="golf-nav">Golf</h2>
+            </nav>
+            <p id="response"></p>
+            <div id="view">
+                <section id="baseball-sec" class="items-container">
+                </section>
+                <section id="basketball-sec" class="hidden items-container">
+                </section>
+                <section id="football-sec" class="hidden items-container">
+                </section>
+                <section id="golf-sec" class="hidden items-container">
+                </section>
+            </div>
         </main>
+        <footer>
+            <a href="contact.html">Contact</a>
+        </footer>
     </body>
 </html>

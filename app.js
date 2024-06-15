@@ -126,7 +126,7 @@ app.get('/faqs', async (req, res) => {
 
 /**
  * Updates the product quantity.
- */
+ 
 app.post('/update-product-quantity', async (req, res) => {
   try {
     const { id, quantity } = req.body;
@@ -165,7 +165,7 @@ app.post('/update-product-quantity', async (req, res) => {
 
 /**
  * Submits an order to the server.
- */
+ 
 app.post('/submit-order', async (req, res) => {
   try {
     const order = req.body;
@@ -187,6 +187,63 @@ app.post('/submit-order', async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+*/
+
+app.post('/submit-order', async (req, res) => {
+    try {
+      const order = req.body;
+      const ordersFilePath = path.join(__dirname, 'data', 'orders.json');
+  
+      let orders = [];
+      try {
+        const ordersData = await fs.readFile(ordersFilePath, 'utf8');
+        orders = JSON.parse(ordersData);
+      } catch (err) {
+        // If orders.json doesn't exist, create a new one
+        if (err.code === 'ENOENT') {
+          await fs.writeFile(ordersFilePath, JSON.stringify([], null, 2), 'utf8');
+        } else {
+          res.status(500).send('Server error');
+        }
+      }
+  
+      orders.push(order);
+  
+      await fs.writeFile(ordersFilePath, JSON.stringify(orders, null, 2), 'utf8');
+      res.json({ success: true, order });
+  
+      // Update product quantities
+      for (let item of order.items) {
+        await updateProductQuantity(item.id, item.cartQuantity);
+      }
+    } catch (err) {
+      res.status(500).send('Server error');
+    }
+  });
+  
+  /**
+   * Updates the product quantity.
+   */
+  async function updateProductQuantity(id, cartQuantity) {
+    const product = products.find((p) => p.id === id);
+    if (!product) {
+      throw new Error('Product not found');
+    }
+  
+    product.quantity -= cartQuantity;
+  
+    const categoryDir = path.join(__dirname, 'data', product.category.toLowerCase());
+    const typeFile = product.type.toLowerCase() + '.json';
+    const filePath = path.join(categoryDir, typeFile);
+  
+    const categoryProducts = JSON.parse(await fs.readFile(filePath, 'utf8'));
+  
+    const productIndex = categoryProducts.findIndex((p) => p.id === id);
+    if (productIndex !== -1) {
+      categoryProducts[productIndex].quantity = product.quantity;
+      await fs.writeFile(filePath, JSON.stringify(categoryProducts, null, 2), 'utf8');
+    }
+  }
 
 /**
  * Submits feedback to the server.
@@ -215,6 +272,17 @@ app.post('/submit-feedback', async (req, res) => {
   } catch (err) {
     res.status(500).send('Server error');
   }
+});
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve images from the "images" directory
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// Route to serve product-view.html
+app.get('/product-view.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'product-view.html'));
 });
 
 const PORT = process.env.PORT || 3000;

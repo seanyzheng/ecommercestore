@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": 1,
+        "name": "Used Baseballs",
+        "price": 3,
+        "brand": "Rawlings",
+        "condition": "Good condition",
+        "color": "White",
+        "yearsUsed": 2,
+        "category": "Baseball",
+        "type": "balls",
+        "image": "images/baseball/baseballs-stock.png",
+        "description": "There are a lot of baseballs here. No need to buy all of them, just order however many you want. I've thrown bullpens with them and also took batting practice. They are in good condition. Going for $3 a ball.",
+        "quantity": 149,
+        "cartQuantity": 2
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "id": 1,
+        "name": "Used Baseballs",
+        "price": 3,
+        "brand": "Rawlings",
+        "condition": "Good condition",
+        "color": "White",
+        "yearsUsed": 2,
+        "category": "Baseball",
+        "type": "balls",
+        "image": "images/baseball/baseballs-stock.png",
+        "description": "There are a lot of baseballs here. No need to buy all of them, just order however many you want. I've thrown bullpens with them and also took batting practice. They are in good condition. Going for $3 a ball.",
+        "quantity": 149,
+        "cartQuantity": 2
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "id": 8,
+        "name": "Javier Baez Jersey",
+        "price": 50,
+        "brand": "Under Armour",
+        "condition": "Good",
+        "color": "Blue",
+        "yearsUsed": 6,
+        "category": "Baseball",
+        "type": "apparel",
+        "image": "images/baseball/jersey-2.png",
+        "description": "Used Javier Baez jersey. I've had this for a while, but he's honestly become one of my least favorite players since leaving the Cubs. Cheap price for this jersey.",
+        "quantity": 0,
+        "cartQuantity": 1
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "id": 4,
+        "name": "Used Rawlings",
+        "price": 150,
+        "brand": "Rawlings",
+        "condition": "Okay condition",
+        "color": "Orange and Camel",
+        "yearsUsed": 2,
+        "category": "Baseball",
+        "type": "equipment",
+        "image": "images/baseball/rawlings.png",
+        "description": "This is a fairly new glove. I just got a new one this one has bad juju. But it shouldn't for whoever uses it next. ",
+        "quantity": 0,
+        "cartQuantity": 1
+      },
+      {
+        "id": 19,
+        "name": "Pro Football",
+        "price": 35,
+        "brand": "Wilson",
+        "condition": "Good",
+        "color": "Brown",
+        "yearsUsed": 1,
+        "category": "football",
+        "type": "balls",
+        "image": "images/football/footballs.png",
+        "description": "Football in great condition. I've only used it for about a year or so, but I'm looking to sell it. It's a great ball for anyone looking to play some football.",
+        "quantity": 0,
+        "cartQuantity": 1
+      },
+      {
+        "id": 28,
+        "name": "Colored Golf Balls",
+        "price": 1.5,
+        "brand": "Mix",
+        "condition": "Good",
+        "color": "Colorful",
+        "yearsUsed": 2,
+        "category": "golf",
+        "type": "balls",
+        "image": "images/golf/balls-2.png",
+        "description": "I've been collecting these colored golf balls for the past 2 years. Looking to sell them for cheap.",
+        "quantity": 249,
+        "cartQuantity": 2
+      }
+    ]
+  }
+]

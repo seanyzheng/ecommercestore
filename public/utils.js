@@ -31,3 +31,39 @@ function qsa(selector) {
 function gen(tagName) {
     return document.createElement(tagName);
 }
+
+/**
+ * Checks the status of the response, throwing an Error if it has a non-200
+ * status code, otherwise returning back the response.
+ * @param {Response} Response object to check
+ * @returns {Response} unmodified Response object if successful
+ * @throws {Error} if Response has non-200 error code
+ */
+function checkStatus(response) {
+if (!response.ok) {
+    throw Error("Error in Request: " + response.statusText);
+}
+return response;
+}
+
+/**
+ * Displays an error message on the page using the message given to the Error.
+ * @param {Error} - error object with error message.
+ */
+function handleError(err) {
+qs("#response").textContent = "Something went wrong: " + err.message;
+}
+
+/**
+ * Returns the existing cart or initializes a new cart if none exists.
+ * @returns {object[]} cart - array of product objects in the cart.
+ */
+function getCart() {
+    let cart = localStorage.getItem("cart");
+    if (cart) {
+        return JSON.parse(cart);
+    } else {
+        return [];
+    }
+}
+
